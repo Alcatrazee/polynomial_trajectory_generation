@@ -5,17 +5,19 @@ close all
 x_start = 0;
 y_start = 0;
 x_end = 2;
-y_end = -0.4;
+y_end = 0.4;
 init_yaw = 0;
-final_yaw = -pi/6;
-T_ph1 = 3;
-T_ph2 = 4;
+final_yaw = pi/2.5;
+
 x_offset = 0.4;
 y_offset = 0;
 
-viapoint_x = 1;
+viapoint_x = 0.5;
 viapoint_y = 0;
 viapoint_yaw = 0.0;
+
+T_ph1 = 3;
+T_ph2 = 4;
 
 constrains = [x_start,y_start,x_end,y_end,init_yaw,final_yaw,x_offset,y_offset];
 viapoint_profile = [viapoint_x,viapoint_y,viapoint_yaw];
@@ -35,3 +37,5 @@ for i=steps:-1:1
    drawnow
 end
  
+data = load("E:\cpp_trajectory_planner\trajectory_generator\matrix_test.txt");
+plot(data(:,1),data(:,2))

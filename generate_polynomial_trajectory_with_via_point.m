@@ -32,8 +32,8 @@ steps = (T_phase1+T_phase2)*steps_per_sec;
 y_pose = zeros(1,steps);
 % x pose should be following a spline curve
 % TODO: auto define value k
-x_pose = get_x_array(x_start,0,via_point_x_pose,atan(0.2),T_phase1,steps_per_sec);
-x_pose_phase_2 = get_x_array(via_point_x_pose,atan(0.2),x_end,0,T_phase2,steps_per_sec);
+x_pose = get_x_array(x_start,0,via_point_x_pose,atan(0.05),T_phase1,steps_per_sec);
+x_pose_phase_2 = get_x_array(via_point_x_pose,atan(0.05),x_end,0,T_phase2,steps_per_sec);
 x_pose = [x_pose , x_pose_phase_2(2:end),x_pose_phase_2(end) ];
 for i=1:steps
     if(i<T_phase1*steps_per_sec)

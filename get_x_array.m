@@ -6,5 +6,4 @@ function x_array = get_x_array(x_start,k_initial,x_end,k_final,T,steps_per_secon
     for i=1:step_amount
        x_array(i) = polyval(flip(coff),t(i));
     end
-    plot(t,x_array);
 end
