@@ -1,0 +1,7 @@
+function pose_sequence = polynomial_with_via_point(constrains,viapoint_profile)
+% this function is to create a 3rd ordered polynomial curve with 1
+% viapoint, parameter: 
+% constrains:[x_start,y_start,initial_direction,final_direction]
+% 
+
+end
