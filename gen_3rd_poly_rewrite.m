@@ -38,7 +38,7 @@ b_vec(2*segaments+1) = tan(initial_direction);
 b_vec(2*segaments+2) = tan(end_direction);
 
 continuity_constrains_mat = zeros(2*segaments-2,segaments*4);
-for i = 1:2:2*segaments-2
+for i = 1:(2*segaments-2)/2
         continuity_constrains_mat((i-1)*2+1,(i-1)*4+1:(i-1)*4+4) = poly_derivative(1,viapoints_with_head_tail(i+1,1) - viapoints_with_head_tail(i,1));
         continuity_constrains_mat((i-1)*2+1,i*4+1:i*4+4) = -poly_derivative(1,0);
         b_vec(2*segaments+2+(2*i-1)) = 0;
@@ -71,9 +71,14 @@ plot(x_series(1,:),y_series(1,:))
 subplot(2,1,2);
 plot(x_series(2,:),y_series(2,:))
 
-x_all = linspace(0,x_end,size(x_series,2)*2);
-y_all = zeros(1,size(y_series,2)*2);
+x_all = zeros(1,size(x_series,2)*segaments);
+y_all = zeros(1,size(y_series,2)*segaments);
 for i=1:segaments
+    if(i>1)
+        x_all((i-1)*1000+1:(i-1)*1000+1000) = x_series(i,:) + x_all((i-1)*1000);
+    else
+        x_all((i-1)*1000+1:(i-1)*1000+1000) = x_series(i,:);
+    end
     y_all((i-1)*size(x_series,2)+1:(i-1)*size(x_series,2)+size(x_series,2)) = y_series(i,:);
 end
 

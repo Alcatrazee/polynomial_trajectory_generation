@@ -11,12 +11,18 @@ viapoint_x = 0.5;
 viapoint_y = 0;
 viapoint_yaw = 0.0;
 
+viapoint_x2 = 1;
+viapoint_y2 = 0.5;
+viapoint_yaw2 = 0.3;
+
 T_ph1 = 3;
 T_ph2 = 3;
+T_ph3 = 3;
 steps_per_sec = 100;
 
 constrains = [x_end,y_end,init_yaw,final_yaw];
-viapoint_profile = [viapoint_x,viapoint_y,viapoint_yaw];
+viapoint_profile = [viapoint_x,viapoint_y,viapoint_yaw;
+                    viapoint_x2,viapoint_y2,viapoint_yaw2];
 T = [T_ph1,T_ph2];
 
 pose_seq = gen_3rd_poly_rewrite(constrains,viapoint_profile,T);
