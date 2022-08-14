@@ -7,7 +7,7 @@ y_start = 0;
 x_end = 2;
 y_end = 0.4;
 init_yaw = 0;
-final_yaw = pi/2.5;
+final_yaw = pi/4;
 
 x_offset = 0.4;
 y_offset = 0;
@@ -30,8 +30,23 @@ figure(2)
 hold on
 axis([0 max(pose_seq(:,1)) min(pose_seq(:,2)) max(max(pose_seq))])
 % axis equal
-steps = 100*(T_ph1+T_ph2);
-for i=steps:-1:1
+steps = 30*(T_ph1+T_ph2);
+
+pose_seq(:,1) = flip(pose_seq(:,1));
+pose_seq(:,2) = flip(pose_seq(:,2));
+pose_seq = [pose_seq zeros(steps,1)];
+pose_seq(1,3) = final_yaw;
+pose_seq(2,3) = final_yaw;
+pose_seq(end,3) = init_yaw;
+for i=3:steps-1
+    if i==steps-1
+        disp ('abc')
+    end
+    pose_seq(i,3) = atan2((pose_seq(i-1,2)-pose_seq(i,2)),(pose_seq(i-1,1)-pose_seq(i,1)));
+end
+
+
+for i=1:steps
    figure(2)
    plot(pose_seq(i,1),pose_seq(i,2),'Marker','.','MarkerSize',5,'color','r');
    drawnow

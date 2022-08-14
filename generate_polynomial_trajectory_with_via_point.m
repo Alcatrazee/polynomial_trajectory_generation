@@ -22,11 +22,11 @@ T_phase1 = T(1);
 T_phase2 = T(2);
 
 % phase 1
-coff1 = generate_3rd_trajectory(y_start,atan(initial_direction),via_point_y_pose,atan(via_point_dir),via_point_x_pose);
+coff1 = generate_3rd_trajectory(y_start,atan(initial_direction),via_point_y_pose,tan(via_point_dir),via_point_x_pose);
 % phase 2
-coff2 = generate_3rd_trajectory(0,atan(via_point_dir),y_end,atan(final_direction),x_end-via_point_x_pose);
+coff2 = generate_3rd_trajectory(0,tan(via_point_dir),y_end,tan(final_direction),x_end-via_point_x_pose);
 
-steps_per_sec = 100;
+steps_per_sec = 30;
 steps = (T_phase1+T_phase2)*steps_per_sec;
 
 y_pose = zeros(1,steps);
