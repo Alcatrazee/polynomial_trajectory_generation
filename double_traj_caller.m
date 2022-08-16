@@ -19,19 +19,19 @@ viapoint_y1 = 0;
 viapoint_vx1 = 0.0;
 viapoint_vy1 = 0.0;
 
-viapoint_x2 = 1;
+viapoint_x2 = 0.7;
 viapoint_y2 = 0.4;
 viapoint_vx2 = 0.3;
 viapoint_vy2 = 0.0;
 
-viapoint_x3 = 1.5;
-viapoint_y3 = 0.5;
-viapoint_vx3 = 0.3;
+viapoint_x3 = 1;
+viapoint_y3 = 1;
+viapoint_vx3 = 0;
 viapoint_vy3 = 0.0;
 
-viapoint_x4 = 1.8;
-viapoint_y4 = 1;
-viapoint_vx4 = 0.3;
+viapoint_x4 = 1.5;
+viapoint_y4 = 1.5;
+viapoint_vx4 = 0;
 viapoint_vy4 = 0.0;
 
 T_ph0 = 0;

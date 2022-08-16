@@ -12,7 +12,7 @@ final_yaw = pi/4;
 x_offset = 0.4;
 y_offset = 0;
 
-viapoint_x = 0.5;
+viapoint_x = 1;
 viapoint_y = 0;
 viapoint_yaw = 0.0;
 

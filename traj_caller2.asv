@@ -7,10 +7,10 @@ y_start = 0;
 x_end = 1.8;
 y_end = 1;
 init_yaw = 0;
-final_yaw = pi/4;
+final_yaw = 0;
 
 viapoint_x = 1;
-viapoint_y = 0;
+viapoint_y = 1;
 viapoint_yaw = 0.0;
 
 viapoint_x2 = 1;
@@ -24,7 +24,7 @@ viapoint_yaw3 = 0.3;
 T_ph1 = 1;
 T_ph2 = 2;
 T_ph3 = 3;
-steps_per_sec = 300;
+steps_per_sec = 1000;
 
 viapoint_profile = [x_start,y_start,init_yaw;
                     viapoint_x,viapoint_y,viapoint_yaw;
@@ -43,8 +43,8 @@ axis equal
 
 hold on
 for i=1:size(x_traj,1)
-    plot(x_traj(i),y_traj(i),'Marker','.','Markersize',10,'color','r');
-    drawnow
+    plot(x_traj(i),y_traj(i),'Marker','o');
+    d
 end
 
 

@@ -2,7 +2,6 @@ function coffs = generate_3rd_polynomial_coffs(viapoints)
 
 % viapoints: all points including start point and end point
 
-
 viapoint_num = size(viapoints,1) - 2;
 segaments = viapoint_num+1;
 b_vec = zeros(segaments*4,1);
